@@ -3,13 +3,11 @@ import RootLayout from "./layout/RootLayout.jsx";
 
 function App() {
   return (
-    <ProductProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<RootLayout />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </ProductProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
