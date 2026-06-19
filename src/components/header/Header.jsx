@@ -1,55 +1,74 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const HeaderContainer = styled.div`
-  display: flex;
+const HeaderContainer = styled.header`
   width: 100%;
-  height: 100%;
+  height: 96px;
+  background: white;
 `;
 
-const HeaderTitle = styled.div`
+const HeaderInner = styled.div`
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+`;
+
+const Logo = styled(Link)`
+  position: absolute;
+  left: 583px;
+  top: 29px;
   color: #4a25ed;
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 25px;
-  font-family: Pretendard Variable;
   font-weight: 300;
-  margin: 29px 269px 37px 584px;
-  word-wrap: break-word;
+  text-decoration: none;
+  white-space: nowrap;
 `;
 
-const BtnContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  justify-content: flex-start;
+const NavContainer = styled.div`
+  position: absolute;
+  left: 1100px;
+  top: 22px;
+  height: 51px;
+  display: flex;
   align-items: center;
   gap: 91px;
-  display: inline-flex;
 `;
-const NavBtn = styled.div`
-  justify-content: flex-start;
+
+const Separator = styled.div`
+  width: 1px;
+  height: 51px;
+  background-color: #4a25ed;
+`;
+
+const NavLinks = styled.nav`
+  display: flex;
   align-items: center;
   gap: 62px;
-  display: flex;
 `;
-const Btn = styled.span`
+
+const NavLink = styled(Link)`
   color: #4a25ed;
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 30px;
-  font-family: Pretendard Variable;
   font-weight: 300;
-  word-wrap: break-word;
+  text-decoration: none;
 `;
 
 export default function Header() {
-  const Title = "skunivlikelion";
-
   return (
     <HeaderContainer>
-      <HeaderTitle>{Title}</HeaderTitle>
-      <BtnContainer>
-        <div></div>
-        <NavBtn>
-            <Btn>홈</Btn>
-            <Btn>구독하기</Btn>
-        </NavBtn>
-      </BtnContainer>
+      <HeaderInner>
+        <Logo to="/">skunivlikelion</Logo>
+        <NavContainer>
+          <Separator />
+          <NavLinks>
+            <NavLink to="/">홈</NavLink>
+            <NavLink to="/subscribe">구독하기</NavLink>
+          </NavLinks>
+        </NavContainer>
+      </HeaderInner>
     </HeaderContainer>
   );
 }
