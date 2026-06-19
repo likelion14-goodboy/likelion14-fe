@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import TopSection from "../components/common/TopSection";
+import IntroduceSection from "../components/common/IntroduceSection";
 import HomeSwitchImg from "../assets/images/button_image.svg";
 import HomeWheelImg from "../assets/images/wheel_image.svg";
 
@@ -39,6 +40,7 @@ export default function Home() {
              <span className="main-title">프론트엔드 </span>
              <span className="point-text">한 스푼.</span>
             </TopSection>
+            <IntroduceSection />
         </HomeContainer>
     );
 }
